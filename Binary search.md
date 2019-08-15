@@ -1,5 +1,23 @@
 # Binary search 的几种总结
 
+* 在 rotated sorted array 中找到最小值（即 pivotal）
+```Java
+int left = 0;
+int right = array.length-1;
+
+while(left < right){
+ int mid = left +(right-left)/2;
+ 
+ if(array[mid]>array[right]){
+   left = mid+1;
+ }else{
+   right = mid;
+ }
+}
+
+//left is where minimal presents.
+```
+
 * Leetcode 33. Search in Rotated Sorted Array
   * No duplicates 
 ```Java
